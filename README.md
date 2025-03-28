@@ -1,6 +1,10 @@
 TCP básico con python
 
-* El servidor TCP escucha en un puerto específico, por lo que debes crear un socket de servidor y configurarlo para que escuche conexiones entrantes.
+Herramientas:
+    Python 3
+    socket
+
+* El servidor TCP escucha en un puerto específico (5000), por lo que debes crear un socket de servidor y configurarlo para que escuche conexiones entrantes.
 * El servidor debe aceptar conexiones y, una vez que se establece la conexión, podrá recibir y enviar datos.
 * El servidor está configurado para escuchar en localhost (IP 127.0.0.1) y el puerto 5000
 
@@ -11,7 +15,10 @@ TCP básico con python
 
 Ejemplo de uso:
  - Ejecutar el servidor (server.py) y posterior el cliente (customer.py) en otra terminal.
-
+ - El cliente debe ingresar un mensaje y luego enviarlo al servidor.
+ - El cliente recibe y muestra el mensaje en consola y procede a devolverlo en mayusculas.
+ - Si el usuario ingresa la palabra "desconexion", procede a finalizar la conexión.
 
 Esto debería mostrar cómo el cliente se conecta al servidor, recibe un mensaje de bienvenida y luego envía un mensaje al servidor.
 Este es un ejemplo básico de un servidor y cliente TCP en Python 3.
+Valida si el usuario envia mensajes, si no envia se procede a cerrar la conexión.
