@@ -1,31 +1,35 @@
 import socket
-
-# Crear un socket TCP
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Configurar el servidor para que escuche en la IP localhost y puerto 12345
-server_socket.bind(('localhost', 12345))
-
-# Escuchar conexiones entrantes (máximo 5 conexiones en espera)
-server_socket.listen(5)
-print("Servidor escuchando en el puerto 12345...")
-contador = 0
-
-while True:
-    contador += 1
-    # Aceptar una conexión entrante
-    client_socket, client_address = server_socket.accept()
-    print(f"Conexión establecida con {client_address}")
-
-    # Enviar un mensaje de bienvenida al cliente
-    # Codificamos el mensaje antes de enviarlo
-    client_socket.send(f"¡Hola, Jorge! {contador}".encode())
-
-    # Recibir datos enviados por el cliente
-    data = client_socket.recv(1024)  # Lee hasta 1024 bytes
-    print(f"Datos recibidos: {data.decode()}")
-
-    # Cerrar la conexión con el cliente
-    client_socket.close()
-    print(f"Conexión cerrada con {client_address}")
-
+# ulizamos la libreria socket, para crear una conexión
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# configuramos el servidor
+server.bind(('localhost', 5000))
+# escuchar conexiones entrantes
+server.listen(5) # máximo 5 conexiones
+print("Servidor escuchando en el puerto 5000...")
+while True: #siempre va a escuchar
+    # acepta la conexión
+    socket, client_address = server.accept()
+    # devuelve un mensaje de conexión exitosa al clinte
+    socket.send(f"¡Conexión establecida!".encode())
+    while True:
+        # recibe el mensaje
+        data = socket.recv(1024)
+        # Si no se recibe datos, cerrar la conexión
+        if not data:
+            socket.send("No he recibido un mensaje, ¡Hasta pronto!".encode())
+            socket.close()
+            break
+        mensaje = data.decode().strip()
+        # muestra el mensaje recibido
+        print(f"Cliente envía: {mensaje}")
+        # Si el mensaje es 'desconexion', cerrar la conexión.
+        if mensaje.upper() == 'DESCONEXION':
+            print(f"Conexión cerrada con {client_address}")
+            socket.send("Cerrando conexión. ¡Hasta pronto!".encode())
+            socket.close()
+            break
+        else:
+            # Devolver el mensaje recibidio en mayúsculas
+            respuesta = mensaje.upper()
+            socket.send(respuesta.encode())
+    print("Listo para mas conexiones")
