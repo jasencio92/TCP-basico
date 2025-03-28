@@ -27,8 +27,8 @@
  - Si el usuario ingresa la palabra "desconexion", procede a finalizar la conexión.
 
 # Resumen
-Esto debería mostrar cómo el cliente se conecta al servidor, recibe un mensaje de bienvenida y luego envía un mensaje al servidor.
-Este es un ejemplo básico de un servidor y cliente TCP en Python 3.
-Valida si el usuario envia mensajes, si no envia se procede a cerrar la conexión.
+Esto debería mostrar cómo el cliente se conecta al servidor, recibe un mensaje de bienvenida y luego envía un mensaje al servidor.<br>
+Este es un ejemplo básico de un servidor y cliente TCP en Python 3.<br>
+Valida si el usuario envia mensajes, si no envia se procede a cerrar la conexión.<br>
 
 <i>Jorge Asencio' :)</i>
