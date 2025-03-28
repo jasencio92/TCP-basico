@@ -18,10 +18,10 @@
 
 # Ejemplo de uso:
  - Ejecutar el servidor (server.py) y posterior el cliente (customer.py) en otra terminal.
-    terminal 1:
-        python3 server.py
-    terminal 2:
-        python3 customer.py
+    * terminal 1:
+        - python3 server.py
+    * terminal 2:
+        - python3 customer.py
  - El cliente debe ingresar un mensaje y luego enviarlo al servidor.
  - El cliente recibe y muestra el mensaje en consola y procede a devolverlo en mayusculas.
  - Si el usuario ingresa la palabra "desconexion", procede a finalizar la conexión.
