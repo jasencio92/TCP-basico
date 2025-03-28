@@ -2,7 +2,7 @@ TCP básico con python
 
 * El servidor TCP escucha en un puerto específico, por lo que debes crear un socket de servidor y configurarlo para que escuche conexiones entrantes.
 * El servidor debe aceptar conexiones y, una vez que se establece la conexión, podrá recibir y enviar datos.
-* El servidor está configurado para escuchar en localhost (IP 127.0.0.1) y el puerto 12345
+* El servidor está configurado para escuchar en localhost (IP 127.0.0.1) y el puerto 5000
 
 1.- Escuchar conexiones: server_socket.listen(5) configura el servidor para que escuche hasta 5 conexiones en espera.
 2.- Aceptar conexiones: server_socket.accept() acepta una conexión entrante y devuelve un socket de cliente (client_socket) y la dirección del cliente (client_address).
