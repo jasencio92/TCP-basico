@@ -2,7 +2,7 @@ import socket
 # ulizamos la libreria socket, para crear una conexión
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # configuramos el servidor
-server.bind(('localhost', 5000))
+server.bind( ('localhost', 5000) )
 # escuchar conexiones entrantes
 server.listen(5) # máximo 5 conexiones
 print("Servidor escuchando en el puerto 5000...")

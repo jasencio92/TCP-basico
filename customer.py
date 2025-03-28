@@ -2,7 +2,7 @@ import socket
 # Crear un socket TCP
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Conectarse al servidor en localhost y puerto 5000
-client_socket.connect(('localhost', 5000))
+client_socket.connect( ('localhost', 5000) )
 # Recibir mensaje de bienvenida del servidor
 welcome = client_socket.recv(1024).decode()
 print(welcome)
